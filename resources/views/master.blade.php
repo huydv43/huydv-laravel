@@ -26,7 +26,7 @@
 	
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Privacy policy (&copy;) 2014</p>
 			<p class="pull-right pay-options">
 				<a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
@@ -41,7 +41,7 @@
 	<!-- include js files -->
 	<script src="source/assets/dest/js/jquery.js"></script>
 	<script src="source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>source/assets/
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="source/assets/dest/vendors/bxslider/jquery.bxslider.min.js"></script>
 	<script src="source/assets/dest/vendors/colorbox/jquery.colorbox-min.js"></script>
 	<script src="source/assets/dest/vendors/animo/Animo.js"></script>
