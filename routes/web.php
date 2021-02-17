@@ -29,3 +29,7 @@ Route::get('chi-tiet-san-pham',[
     'as' =>'chitietsanpham',
     'uses' =>'PageController@getDetailProduct'
 ]);
+Route::get('lien-he',[
+    'as' =>'lienhe',
+    'uses' =>'PageController@getContact'
+]);
