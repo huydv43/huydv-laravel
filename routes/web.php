@@ -20,8 +20,8 @@ Route::get('/', function () {
     'as'=>'trang-chu',
     'uses' =>'PageController@getIndex'
 ]);  */
-Route::get('index','PageController@getIndex');
-Route::get('loai-san-pham',[
+Route::get('index','PageController@getIndex')->name('index');
+Route::get('loai-san-pham/{type?}',[
     'as' =>'loaisanpham',
     'uses' =>'PageController@getProductType'
 ]);
@@ -32,4 +32,8 @@ Route::get('chi-tiet-san-pham',[
 Route::get('lien-he',[
     'as' =>'lienhe',
     'uses' =>'PageController@getContact'
+]);
+Route::get('gioi-thieu',[
+    'as' =>'gioithieu',
+    'uses' =>'PageController@getAbout'
 ]);
