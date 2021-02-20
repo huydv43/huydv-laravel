@@ -21,7 +21,7 @@
                 <div class="col-sm-3">
                     <ul class="aside-menu">
                         @foreach($product as $p)
-                        <li><a href="{{route('loaisanpham')}}">{{$p->name}}</a></li>
+                        <li><a href="{{route('loaisanpham',$p->id)}}">{{$p->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>
