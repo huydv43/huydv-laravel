@@ -31,9 +31,11 @@ class PageController extends Controller
 
 
 
-    public function getDetailProduct()
+    public function getDetailProduct(Request $request)
     {
-        return view('pages.detail_product');
+        $product = Product::where('id',$request->id)->first();
+        $product_related = Product::where('id_type',$product->id_type)->paginate(3);
+        return view('pages.detail_product',compact('product','product_related'));
     }
     public function getContact()
     {

@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Sản phẩm</span>
+                <a href="{{route('index')}}">Home</a> / <span>Sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -40,9 +40,9 @@
                                     @if ($type_item->promotion_price != 0)
                                     <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div>
                                     </div>
-                                    @endif 
+                                    @endif
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$type_item->image}}" alt="" height="250px"></a>
+                                        <a href="{{route('chitietsanpham',$type_item->id)}}"><img src="source/image/product/{{$type_item->image}}" alt="" height="250px"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$type_item->name}}</p>
@@ -52,12 +52,12 @@
                                             @else
                                                 <span class="flash-del">{{number_format($type_item->unit_price)}} VND</span>
                                                 <span class="flash-sale">{{number_format($type_item->promotion_price)}} VND</span>
-                                            @endif                                     
+                                            @endif
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('chitietsanpham',$type_item->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     </div>
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$other->image}}" alt="" height="250px"></a>
+                                        <a href="{{route('chitietsanpham',$other->id)}}"><img src="source/image/product/{{$other->image}}" alt="" height="250px"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$other->name}}</p>
@@ -93,23 +93,21 @@
                                                 <span class="flash-del">{{number_format($other->unit_price)}} VND</span>
                                                 <span class="flash-sale">{{number_format($other->promotion_price)}} VND</span>
                                             @endif
-                                            
+
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('chitietsanpham',$other->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
-
-
                         </div>
                         <div class="d-flex justify-content-center">{{ $type_product->links() }}</div>
                         <div class="space40">&nbsp;</div>
-                        
+
                     </div> <!-- .beta-products-list -->
                 </div>
             </div> <!-- end section with sidebar and main content -->
