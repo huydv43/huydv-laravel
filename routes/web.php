@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
- Route::get('/','PageController@getIndex');
+ Route::get('/','PageController@getIndex')->name('index');
 
  Route::get('index',[
     'as'=>'trang-chu',
     'uses' =>'PageController@getIndex'
 ]);
 
-Route::get('index','PageController@getIndex')->name('index');
+/* Route::get('index','PageController@getIndex')->name('index'); */
 
 Route::get('loai-san-pham/{type?}',[
     'as' =>'loaisanpham',
@@ -39,4 +39,8 @@ Route::get('lien-he',[
 Route::get('gioi-thieu',[
     'as' =>'gioithieu',
     'uses' =>'PageController@getAbout'
+]);
+Route::get('search',[
+    'as' => 'search-product',
+    'uses' => 'PageController@search'
 ]);
