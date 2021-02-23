@@ -3,15 +3,26 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href="#"><i class="fa fa-home"></i> Dịch Vọng - Cầu Giấy - Hà Nội</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i>Cầu Giấy - Hà Nội</a></li>
                     <li><a href="#"><i class="fa fa-phone"></i> 0971175501</a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
-                    <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-                    <li><a href="#">Đăng kí</a></li>
-                    <li><a href="#">Đăng nhập</a></li>
+                    @if (Auth::check())
+                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i>{{ Auth::user()->name }}</a></li>
+                    @else
+                        <ul class="top-details menu-beta l-inline">
+                            <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
+                            <li><a href="{{ route('get.register') }}">Đăng kí</a></li>
+                            <li><a href="{{ route('get.login') }}">Đăng nhập</a></li>
+                        </ul>
+                    </div>
+                    @endif
+                    
+
+                    
                 </ul>
             </div>
             <div class="clearfix"></div>

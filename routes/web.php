@@ -44,3 +44,29 @@ Route::get('search',[
     'as' => 'search-product',
     'uses' => 'PageController@search'
 ]);
+
+
+
+//login,Logout,Register
+/* Auth::routes(); */
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('login','PageController@getLogin')->name('get.login');
+Route::post('login','PageController@postLogin')->name('post.login');
+Route::get('register','PageController@getRegister')->name('get.register');
+Route::post('register','PageController@postRegister')->name('post.register'); 
+Route::get('logout','PageController@logout')->name('logout');
+/* Route::match(['post'], '/register', 'PageController@postRegister')->name('post.register'); */
+
+/// admin
+Route::get('admin/login','AdminController@getLoginAdmin')->name('get.login.admin');
+Route::post('admin/login','AdminController@postLoginAdmin')->name('post.login.admin');
+/* Route::middleware(['auth'])->group(function () {
+    
+    
+}); */
+Route::get('admin/create','AdminController@getCreateProduct')->name('get.create.product');
+Route::post('admin/create','AdminController@postCreateProduct')->name('post.create.product');
+Route::get('admin/logout','AdminController@Logout')->name('logout.admin');
+
+
+ 
