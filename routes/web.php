@@ -58,8 +58,9 @@ Route::get('logout','PageController@logout')->name('logout');
 /* Route::match(['post'], '/register', 'PageController@postRegister')->name('post.register'); */
 
 /// admin
-Route::get('admin/login','AdminController@getLoginAdmin')->name('get.login.admin');
-Route::post('admin/login','AdminController@postLoginAdmin')->name('post.login.admin');
+Route::get('admin','AdminController@getIndex')->middleware('check.request.admin')->name('get.index.admin');
+/* Route::get('admin/login','AdminController@getLoginAdmin')->name('get.login.admin');
+Route::post('admin/login','AdminController@postLoginAdmin')->name('post.login.admin'); */
 /* Route::middleware(['auth'])->group(function () {
     
     
@@ -67,6 +68,8 @@ Route::post('admin/login','AdminController@postLoginAdmin')->name('post.login.ad
 Route::get('admin/create','AdminController@getCreateProduct')->name('get.create.product');
 Route::post('admin/create','AdminController@postCreateProduct')->name('post.create.product');
 Route::get('admin/logout','AdminController@Logout')->name('logout.admin');
+Route::get('admin/create','AdminController@getCreate')->name('get.create.admin')->middleware('check.request.admin');
+Route::post('admin/create','AdminController@postCreate')->name('post.create.admin')->middleware('check.request.admin');
 
 
  

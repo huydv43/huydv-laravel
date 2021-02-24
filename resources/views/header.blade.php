@@ -9,20 +9,22 @@
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
-                    @if (Auth::check())
-                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                    @if (Auth::check() && Auth::user()->role == 0)
                         <li><a href="#"><i class="fa fa-user"></i>{{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                        
+                    @elseif (Auth::check() && Auth::user()->role == 1)
+                        <li><a href="#"><i class="fa fa-user"></i>{{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
+                        <li><a href="{{ route('get.index.admin') }}">ADMIN</a></li>
+                        
                     @else
                         <ul class="top-details menu-beta l-inline">
-                            <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-                            <li><a href="{{ route('get.register') }}">Đăng kí</a></li>
+                            <li><a href="{{ route('get.register') }}">Đăng kí</a></li>                              
                             <li><a href="{{ route('get.login') }}">Đăng nhập</a></li>
                         </ul>
                     </div>
                     @endif
-                    
-
-                    
                 </ul>
             </div>
             <div class="clearfix"></div>

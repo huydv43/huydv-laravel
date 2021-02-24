@@ -98,7 +98,7 @@ class PageController extends Controller
             return redirect()->route('index');
         }
         else
-        return redirect()->route('get.login');
+        return redirect()->route('get.login')->with('message','Đăng Nhập Thất Bại !');
     }
 
     public function getRegister()
@@ -128,7 +128,8 @@ class PageController extends Controller
     }
     public function logout()
     {
-        Auth::logout();
+        Auth::logout();\
+        Session::flush();
         return redirect()->route('index');  
     }
 
