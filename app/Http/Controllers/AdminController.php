@@ -23,7 +23,6 @@ class AdminController extends Controller
     public function Logout()
     {
         Auth::logout();
-        Session::flush();
         return redirect()->route('index');
     }
 
@@ -33,19 +32,13 @@ class AdminController extends Controller
     }
     public function postCreate(Request $request)
     {
-            //  Let's do everything here
+        $nameImage =  $request->file('fimage')->getClientOriginalName();//lấy tên ảnh
 
-                //
-                if ($files = $request->file('fileUpload')) {
-                    $destinationPath = 'public/image/'; // upload path
-                    $profileImage = date('YmdHis') . "." . $files->getClientOriginalExtension();
-                    $files->move($destinationPath, $profileImage);
-                 }
+        /* $request->validate([
+            'nameImage' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]); */
+
         
-    
-       /*  $imageName = time().'.'.$request->image->extension();  
-     
-        $request->image->move(public_path('public\source\assets\image\product'), $imageName); */
 
         $product = new Product;
         $product->name = $request->name;
@@ -53,9 +46,10 @@ class AdminController extends Controller
         $product->description = $request->description;
         $product->unit_price = $request->unit_price;
         $product->promotion_price = $request->promotion_price;
-        $product->image = $request->image;
         $product->unit = $request->unit;
+        $product->image = $nameImage;
+        $request->file('fimage')->move('source/image/product', $nameImage);// 
         $product->save();
-        dd($product);
+        return view('admin.index');
     }
 }

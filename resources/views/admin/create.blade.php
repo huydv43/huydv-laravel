@@ -10,10 +10,10 @@
             <input type="text" class="form-control rounded-0" id="name" placeholder="Name" name="name">
           </div>
 
-          <div class="form-group col-md-2">
-            <label for="inputState">loại Bánh</label>
+          <div >
+            <label for="inputState">Loại Bánh</label>
                 <select id="inputState" class="form-control" name="id_type">
-                <option selected>Choose</option>
+                <option selected>Chọn loại bánh</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -22,36 +22,33 @@
                 <option>6</option>
                 </select>
           </div>
-          <div id="clearfix"></div>
 
-          <div class="col-2">
             <div class="form-group ">
-                <label class="text-uppercase font-weight-bold" for="description">description</label>
+                <label class="text-uppercase font-weight-bold" for="description">Mô Tả Sản Phẩm</label>
                 <input type="text" class="form-control rounded-0" id="description" placeholder="description" name="description">
-              </div>
           </div>
 
           <div class="form-group ">
-            <label class="text-uppercase font-weight-bold" for="description">unit_price</label>
+            <label class="text-uppercase font-weight-bold" for="description">Giá Sản Phẩm</label>
             <input type="text" class="form-control rounded-0" id="description" placeholder="unit_price" name="unit_price">
           </div>
 
           <div class="form-group ">
-            <label class="text-uppercase font-weight-bold" for="description">promotion_price</label>
+            <label class="text-uppercase font-weight-bold" for="description">Giá Khuyến Mãi</label>
             <input type="text" class="form-control rounded-0" id="description" placeholder="promotion_price" name="promotion_price">
           </div>
 
           <div class="form-group col-md-2">
-            <label for="inputState">State</label>
+            <label for="inputState">Đơn Vị</label>
             <select id="inputState" class="form-control">
-              <option selected>Choose</option>
+              <option selected>chọn đơn vị</option>
               <option>hộp</option>
               <option>cái</option>
             </select>
           </div>
              </div>
       
-                <div class="col-md-4">
+                
                   @if ($message = Session::get('success'))
                   <div class="alert alert-success alert-block">
                       <button type="button" class="close" data-dismiss="alert">×</button>
@@ -71,26 +68,16 @@
                               @endforeach
                           </ul>
                       </div>
-                  @endif
-                      
-                  <div class="row">
-                    <div class="col-md-6">
-                        <input type="file" name="image" class="form-control">
-                    </div>
-       
-                    <div class="col-md-6">
-                        <button type="submit" class="btn btn-success">Upload</button>
-                    </div>
-                </div>
-                </div> 
-                </div>
-            </div>
+                  @endif 
+                    <div class="row">
+                      <div class="col-md-8">
+                          <input type="file" name="fimage" class="form-control">
+                      </div>
+                  </div>
 
-            <div class="form-group ">
-                <button type="submit" class="btn btn-danger text-uppercase rounded-0 font-weight-bold">
-                confirm
-                </button>
-            </div>
+            <div class="form-group">
+            <button type="submit" class="btn btn-primary">CREATE</button>
+          </div>
         </form>
       </div>
     </div>
