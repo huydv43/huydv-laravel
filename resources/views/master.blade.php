@@ -15,6 +15,7 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 

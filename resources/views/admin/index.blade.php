@@ -15,6 +15,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
 <link rel="stylesheet" href="source_admin/assets/web/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="source_admin/assets/web/css/style.css" rel='stylesheet' type='text/css' />
@@ -47,28 +48,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!--logo end-->
-
+    
 <div class="top-nav clearfix">
+    <h2 class="d-flex justify-content-center">admin pages</h2>
     <!--search & user info start-->
     <ul class="nav pull-right top-menu">
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
         </li>
-        <!-- user login dropdown start-->
-        {{-- @if (Auth::check())
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="source_admin/assets/web/images/2.png">
-                <span class="username">{{ Auth::admin()->name }}</span>
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-            </ul>
-        </li>
-        @else --}}
+        
         <li class="dropdown">
             @if (Auth::check() && Auth::user()->role == 1)
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -95,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             @endif
             
         </li>
-       {{--  @endif --}}
+       
         <!-- user login dropdown end -->
        
     </ul>
@@ -123,13 +111,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </a>
                     <ul class="sub">
 						<li><a href="{{route('post.create.admin')}}">tạo sản phẩm mới</a></li>
-						<li><a href="glyphicon.html">glyphicon</a></li>
-                        <li><a href="grids.html">Grids</a></li>
+						<li><a href="{{ route('get.list.admin') }}">Hiển thị Danh sách bánh </a></li>
+                        <li><a href="#">Hiển thị chi tiết</a></li>
+                        <li><a href="grids.html">xem chi tiết bánh </a></li>
                     </ul>
                 </li>
                
                 <li>
-                    <a href="login.html">
+                    <a href="{{ route('index') }}">
                         <i class="fa fa-user"></i>
                         <span>Login Page</span>
                     </a>

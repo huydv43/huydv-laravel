@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Storage;
+use DB;
 
 class AdminController extends Controller
 {
@@ -52,4 +53,35 @@ class AdminController extends Controller
         $product->save();
         return view('admin.index');
     }
+
+    public function getList()
+    {
+        $list_product = Product::orderBy('id','desc')->paginate(5);
+        return view('admin.list',[
+            'list_product' => $list_product,
+        ]);
+        
+    }
+    public function detail($id)
+    {  
+        $detail = Product::find($id);
+        return view('admin.detail',[
+            'detail' => $detail,
+        ]);
+    }
+
+    public function deleteProduct($id)
+    {
+        $delete_product = Product::find($id);
+        $delete_product->delete();
+        return redirect()->route('get.list.admin');
+    }
+    
+    public function editProduct()
+    {
+        $edit_product = Product::find($id);
+        return view('admin.detail',[
+            'edit' => $edit_product,
+        ]);
+     }
 }

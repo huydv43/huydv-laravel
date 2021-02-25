@@ -70,6 +70,9 @@ Route::post('admin/create','AdminController@postCreateProduct')->name('post.crea
 Route::get('admin/logout','AdminController@Logout')->name('logout.admin');
 Route::get('admin/create','AdminController@getCreate')->name('get.create.admin')->middleware('check.request.admin');
 Route::post('admin/create','AdminController@postCreate')->name('post.create.admin')->middleware('check.request.admin');
+Route::get('admin/list','AdminController@getList')->name('get.list.admin')->middleware('check.request.admin');
+Route::get('admin/detail/{id}','AdminController@detail')->name('get.detail.admin')->middleware('check.request.admin');
+Route::delete('admin/delete/{id}','AdminController@deleteProduct')->name('get.delete.admin')->middleware('check.request.admin');
 
 
  
